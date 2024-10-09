@@ -1,35 +1,263 @@
-<div id="leaderboard" class="content">
-    <h2>Class Ratings Leaderboard</h2>
-    <table class="leaderboard">
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Rating</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="GM" class="gm-icon">Adith Gorle</td>
-            <td>4000</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="GM" class="gm-icon">Krishiv Joshi</td>
-            <td>4000</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="NM" class="nm-icon">Pradyumna Gadia</td>
-            <td>3000</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="NM" class="nm-icon">Amay Bhatnagar</td>
-            <td>2900</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Ayaansh Goyal</td>
-            <td>400</td>
-        </tr>
-    </table>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Atlas Organization</title>
+    <style>
+        body, html {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8; /* Default light theme background */
+            color: #333; /* Default light theme text color */
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+        }
+        body.dark-mode {
+            background-color: #2C2C2C; /* Dark theme background */
+            color: #f8f8f8; /* Dark theme text color */
+        }
+        header {
+            background-color: #2C2C2C; /* Header background for dark theme */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        header img {
+            max-width: 150px; /* Adjust size as needed */
+            margin-bottom: 10px; /* Space between logo and title */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Nav bar background */
+        }
+        nav a {
+            padding: 14px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #575757; /* Hover effect */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .leaderboard {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .leaderboard th, .leaderboard td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .leaderboard th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        footer {
+            background-color: #2C2C2C; /* Footer background */
+            color: #4CAF50; /* Green color for footer text in dark mode */
+            text-align: center;
+            padding: 15px;
+            position: relative; /* Use relative positioning to avoid overlapping */
+            margin-top: 40px;  /* Add space above the footer */
+            width: 100%;
+        }
+        .tournament {
+            width: 70%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .match {
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .match h3, .match p {
+            color: #999; /* Grey color for match information in dark mode */
+        }
+        .winner {
+            font-weight: bold;
+            color: #4CAF50; /* Bold winner text */
+        }
+        .board-info {
+            font-size: 14px;
+            color: #999; /* Grey color for additional board info in dark mode */
+        }
+        button {
+            cursor: pointer;
+        }
+        .gm-icon, .nm-icon {
+            width: 24px; /* Adjust size as needed */
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .theme-toggle {
+            margin: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/document.jpeg" alt="Chess Atlas Organization Logo"> <!-- Logo added here -->
+        <h1>CHESS ATLAS ORGANIZATION</h1>
+        <p>Class Atlas Chess League</p>
+    </header>
+
+    <nav>
+        <a href="#home" onclick="smoothScroll(event)">Home</a>
+        <a href="#leaderboard" onclick="smoothScroll(event)">Leaderboard</a>
+        <a href="#october-event" onclick="smoothScroll(event)">October Event</a>
+        <a href="#analysis" onclick="smoothScroll(event)">Analysis Board</a>
+        <a href="#about" onclick="smoothScroll(event)">About Us</a>
+    </nav>
+
+    <div class="content">
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark/Light Theme</button>
+    </div>
+
+    <div id="home" class="content">
+        <h2>Welcome to Chess Atlas Organization</h2>
+        <p>Join us for the best chess matches in Class Atlas. Compete, Learn, and Grow!</p>
+    </div>
+
+    <div id="leaderboard" class="content">
+        <h2>Class Ratings Leaderboard</h2>
+        <table class="leaderboard">
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="GM" class="gm-icon">Adith Gorle</td>
+                <td>4000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="GM" class="gm-icon">Krishiv Joshi</td>
+                <td>4000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="NM" class="nm-icon">Pradyumna Gadia</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="https://raw.githubusercontent.com/UnitBoyGamer/chess-atlas-organization/main/button3-a.svg" alt="NM" class="nm-icon">Amay Bhatnagar</td>
+                <td>2900</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ayaansh Goyal</td>
+                <td>400</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="october-event" class="content">
+        <h2>October Event Matches</h2>
+        <div class="tournament">
+            <div class="match">
+                <h3>1st Match</h3>
+                <p>Amay Bhatnagar (White) vs Pradyumna Gadia (Black)</p>
+                <p class="winner">Winner: Amay Bhatnagar</p>
+                <p class="board-info">Amay was White</p>
+            </div>
+            <div class="match">
+                <h3>2nd Match</h3>
+                <p>Adith Gorle (Black) vs Amay Bhatnagar (White)</p>
+                <p class="winner">Winner: Adith Gorle</p>
+                <p class="board-info">Adith was Black</p>
+            </div>
+            <div class="match">
+                <h3>3rd Match</h3>
+                <p>Krishiv Joshi (White) vs Ayaansh Goyal (Black)</p>
+                <p class="winner">Winner: Krishiv Joshi</p>
+                <p class="board-info">Krishiv was White</p>
+            </div>
+        </div>
+        
+        <h2>October Event Leaderboard</h2>
+        <table class="leaderboard">
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Amay Bhatnagar</td>
+                <td>1</td> <!-- Amay won one match -->
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Adith Gorle</td>
+                <td>1</td> <!-- Adith won one match -->
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Krishiv Joshi</td>
+                <td>1</td> <!-- Krishiv won one match -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Pradyumna Gadia</td>
+                <td>0</td> <!-- Pradyumna lost one match -->
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ayaansh Goyal</td>
+                <td>0</td> <!-- Ayaansh lost one match -->
+            </tr>
+        </table>
+    </div>
+
+    <div id="analysis" class="content">
+        <h2>Analysis Board</h2>
+        <iframe width="800" height="600" src="https://lichess.org/analysis" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="about" class="content">
+        <h2>About Us</h2>
+        <p>Developers: Krishiv Joshi & Adith Gorle</p>
+        <p>We are dedicated to promoting chess within Class Atlas.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Chess Atlas Organization. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function smoothScroll(event) {
+            event.preventDefault();
+            const targetId = event.currentTarget.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
